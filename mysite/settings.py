@@ -112,4 +112,4 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 #juhoi.kim
-STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
