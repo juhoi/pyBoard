@@ -1,5 +1,5 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+{% extends 'base.html' %}
+{% block content %}
 <div class="container my-3">
     <table class="table">
         <thead>
@@ -11,7 +11,7 @@
         </thead>
         <tbody>
         {% if question_list %}
-        {% for question in question_list %}
+            {% for question in question_list %}
             <tr>
             <td>{{ forloop.counter }}</td>
             <td>
@@ -19,12 +19,14 @@
             </td>
             <td>{{ question.create_date }}</td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3">잘문이 없습니다.</td>
+                <td colspan="3">질문이 없습니다.</td>
             </tr>
         {% endif %}
         </tbody>
     </table>
+    <a href="{% url 'board:question_create' %}" class="btn btn-primary">질문 등록하기</a>
 </div>
+{% endblock %}
