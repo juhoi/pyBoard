@@ -6,6 +6,7 @@
         <thead>
         <tr class="thead-dark text-center">
             <th>번호</th>
+            <th>추천</th>
             <th>제목</th>
             <th>글쓴이</th>
             <th>작성일시</th>
@@ -16,7 +17,12 @@
             {% for question in question_list %}
             <tr class="text-center">
             <td>{{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}</td>
-            <td class="text-left">= {{ question_list.paginator.count }} - {{ question_list.start_index }} - {{ forloop.counter0 }} + 1
+            <td>
+                {% if question.voter.all.count > 0 %}
+                <span class="badge badge-warning px-2 py-1">{{ question.voter.all.count }}</span>
+                {% endif %}
+            </td>
+            <td class="text-left">
                 <a href="{% url 'board:detail' question.id %}">{{ question.subject }}</a>
                 {% if question.answer_set.count > 0 %}
                 <span class="text-danger small ml-2">{{ question.answer_set.count }}</span>
