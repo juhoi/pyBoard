@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # juhoi.kim
     'board.apps.BoardConfig',
+    'common.apps.CommonConfig',
 ]
 
 MIDDLEWARE = [
@@ -113,3 +114,6 @@ USE_TZ = False
 STATIC_URL = '/static/'
 #juhoi.kim
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
