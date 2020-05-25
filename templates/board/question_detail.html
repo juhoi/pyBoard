@@ -63,7 +63,8 @@
     </div>
         </div>
     </div>
-    <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-success">목록보기</a>
+    <!--a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-success">목록보기</a-->
+    <a href="{% url 'board:index' %}?page={{ page }}" class="btn btn-success">목록보기</a>
     <h5 class="border-bottom my-3 py-2">{{ question.answer_set.count }}개의 답변이 있습니다.</h5>
     {% for answer in question.answer_set.all %}
     <div class="row my-3">

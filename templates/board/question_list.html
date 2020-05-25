@@ -23,7 +23,7 @@
                 {% endif %}
             </td>
             <td class="text-left">
-                <a href="{% url 'board:detail' question.id %}">{{ question.subject }}</a>
+                <a href="{% url 'board:detail' question.id %}?page={{ question_list.number }}">{{ question.subject }}</a>
                 {% if question.answer_set.count > 0 %}
                 <span class="text-danger small ml-2">{{ question.answer_set.count }}</span>
                 {% endif %}

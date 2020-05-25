@@ -17,6 +17,8 @@ def index(request):
 
 def detail(request, question_id):
     # question = Question.objects.get(id=question_id)
+    question_list = Question.objects.order_by('-create_date')
+    page = int([question.id for question in question_list].index(question_id)/5) + 1
     question = get_object_or_404(Question, pk=question_id)
-    context = {'question': question}
+    context = {'question': question, 'page': page}
     return render(request, 'board/question_detail.html', context)
