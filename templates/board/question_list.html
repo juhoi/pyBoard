@@ -2,6 +2,14 @@
 {% load pyboard_filter %}
 {% block content %}
 <div class="container my-3">
+    <div class="row justify-content-end my-3">
+        <div class="col-4 input-group">
+            <input type="text" class="form-control kw" value="{{ kw|default_if_none:'' }}">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" id="btn_search" type="button">찾기</button>
+            </div>
+        </div>
+    </div>
     <table class="table">
         <thead>
         <tr class="thead-dark text-center">
@@ -74,4 +82,8 @@
     </ul>
     <a href="{% url 'board:question_create' %}" class="btn btn-primary">질문 등록하기</a>
 </div>
+    <form method="get" action="{% url 'board:index' %}" id="searchForm">
+        <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+        <input type="hidden" id="page" name="page" value="{{ page }}">
+    </form>
 {% endblock %}
