@@ -4,7 +4,7 @@ import json
 from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 secret_file = os.path.join(BASE_DIR, 'secret.json')  # secret.json 파일 위치를 명시
 
@@ -27,7 +27,6 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c$yfh24x*1ff3ky0z9#b!-5pi!sznbx7q13p-siqhfd8x0t70='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
