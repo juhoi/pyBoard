@@ -136,5 +136,7 @@ dmypy.json
 # SECRET_KEY
 secret.json
 
+prod.py
+
 goorm.manifest
 .temp
