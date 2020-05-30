@@ -137,6 +137,7 @@ dmypy.json
 secret.json
 
 prod.py
+logs/
 
 goorm.manifest
 .temp
