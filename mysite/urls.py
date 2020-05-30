@@ -12,3 +12,7 @@ urlpatterns = [
     path('board/', include('board.urls')),
     path('common/', include('common.urls')),
 ]
+
+handler400 = 'common.views.bad_request_page'
+handler404 = 'common.views.page_not_found_page'
+handler500 = 'common.views.server_error_page'
